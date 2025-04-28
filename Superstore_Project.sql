@@ -180,8 +180,7 @@
 ---
 **Query #11**
 
-    
-    -- Which category has the highest average item price
+
     
     -- Which item has the highest customer rating overall?
     SELECT item_name,average_rating
