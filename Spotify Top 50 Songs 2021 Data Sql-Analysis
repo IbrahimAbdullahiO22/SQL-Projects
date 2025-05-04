@@ -1,0 +1,65 @@
+# For this project, I downloaded Spotify data from Kaggle.
+# I created a table to insert Spotify data into and perfromed analytics on the data using SQL.
+
+-- Spotify Data Table
+CREATE TABLE BIT_DB.Spotifydata (
+  id integer PRIMARY KEY,
+  artist_name varchar NOT NULL,
+  track_name varchar NOT NULL,
+  track_id varchar NOT NULL,
+  popularity integer NOT NULL,
+  danceability decimal(4,3) NOT NULL,
+  energy decimal(4,3) NOT NULL,
+  song_key integer NOT NULL,
+  loudness decimal(5,3) NOT NULL,
+  song_mode integer NOT NULL,
+  speechiness decimal(5,4) NOT NULL,
+  acousticness decimal(6,5) NOT NULL,
+  instrumentalness decimal(8,7) NOT NULL,
+  liveness decimal(5,4) NOT NULL,
+  valence decimal(4,3) NOT NULL,
+  tempo decimal(6,3) NOT NULL,
+  duration_ms integer NOT NULL,
+  time_signature integer NOT NULL
+);
+
+-- Questions & Answers
+
+-- 1. Which artist has the most songs?
+SELECT artist_name, COUNT(*) AS song_count
+FROM BIT_DB.Spotifydata
+GROUP BY artist_name
+ORDER BY song_count DESC
+LIMIT 1;
+
+-- 2. Average danceability of popular songs
+SELECT AVG(danceability)
+FROM BIT_DB.Spotifydata
+WHERE popularity > 80;
+
+-- 3. Highest energy track
+SELECT track_name, artist_name, energy
+FROM BIT_DB.Spotifydata
+ORDER BY energy DESC
+LIMIT 1;
+
+-- 4. Average loudness of acoustic songs
+SELECT AVG(loudness)
+FROM BIT_DB.Spotifydata
+WHERE acousticness > 0.7;
+
+-- 5. Count of instrumental songs
+SELECT COUNT(*)
+FROM BIT_DB.Spotifydata
+WHERE instrumentalness > 0.8;
+
+-- 6. Average tempo in 3/4 time signature
+SELECT AVG(tempo)
+FROM BIT_DB.Spotifydata
+WHERE time_signature = 3;
+
+-- 7. Longest duration song
+SELECT track_name, artist_name, duration_ms
+FROM BIT_DB.Spotifydata
+ORDER BY duration_ms DESC
+LIMIT 1;
