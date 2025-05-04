@@ -6,5 +6,5 @@ This repository contains all my SQL practice projects.
 - **Furtune 500 Project**: SQL Analysis on Fortune 500 Workplace Benefits and Financials
 
 
-### Author
-Ibrahim Abdullahi Ojoma
+## Author
+# Ibrahim Abdullahi Ojoma
