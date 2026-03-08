@@ -1,4 +1,13 @@
 **Schema (SQLite v3.39)**
+Fortune 500 sql analysis · SQL
+
+-- Fortune 500 Workplace Benefits & Financials Analysis
+-- Dataset: Fortune 500 companies with data on revenue, employees,
+-- healthcare benefits, PTO, maternity leave, and employee tenure.
+-- Skills: CASE statements, HAVING, GROUP BY, ORDER BY,
+-- aggregate functions, conditional filtering
+-- Author: Ibrahim Abdullahi
+
 
     CREATE TABLE fortune_companies (
         company_id INTEGER PRIMARY KEY,
@@ -90,8 +99,6 @@
 ---
 **Query #2**
 
-    
-    
     -- Show revenue per employee for each company
     Select company_name, revenue, employees, 
            (revenue * 1000000) / employees AS revenue_per_employee
@@ -146,8 +153,6 @@
 ---
 **Query #3**
 
-    
-    
     -- Categorize companies based on maternity leave policy
     SELECT company_name, maternity_leave_weeks,
       CASE 
@@ -207,8 +212,6 @@
 ---
 **Query #4**
 
-    
-    
     -- Show industries with average tenure > 6 years
     SELECT industry, AVG(avg_employee_tenure) AS avg_tenure
     FROM fortune_companies
@@ -224,8 +227,6 @@
 ---
 **Query #5**
 
-    
-    
     -- Show companies that offer healthcare and more than 20 days PTO
     SELECT company_name, healthcare_benefits, paid_time_off_days
     FROM fortune_companies
@@ -250,8 +251,6 @@
 ---
 **Query #6**
 
-    
-    
     -- Identify companies with PTO benefits but zero maternity leave
     SELECT company_name, paid_time_off_days, maternity_leave_weeks
     FROM fortune_companies
@@ -260,9 +259,7 @@
 There are no results to be displayed.
 
 ---
-**Query #7**
-
-    
+**Query #7**   
     
     -- Show top industries ranked by average company revenue
     SELECT industry, AVG(revenue) AS avg_revenue
@@ -282,9 +279,7 @@ There are no results to be displayed.
 | Telecommunications | 123.99666666666667 |
 
 ---
-**Query #8**
-
-    
+**Query #8**  
     
     -- Count how many companies offer each healthcare benefit type
     SELECT healthcare_benefits, COUNT(*) AS company_count
@@ -297,9 +292,7 @@ There are no results to be displayed.
 | 1                   | 30            |
 
 ---
-**Query #9**
-
-    
+**Query #9**    
     
     -- Display top 5 companies with most paid time off days
     SELECT company_name, paid_time_off_days
@@ -318,13 +311,23 @@ There are no results to be displayed.
 ---
 **Query #10**
 
-    
-    
-    SELECT company_name, avg_employee_tenure, revenue
-    FROM fortune_companies
-    WHERE avg_employee_tenure > 7 AND revenue > 20000;
+-- 10. Show companies with above average employee tenure ordered by revenue.
+SELECT company_name, avg_employee_tenure, revenue
+FROM fortune_companies
+WHERE avg_employee_tenure > 7
+ORDER BY revenue DESC;
 
-There are no results to be displayed.
+-- 11. Which industry offers the best average maternity leave?
+SELECT industry, ROUND(AVG(maternity_leave_weeks), 1) AS avg_maternity_weeks
+FROM fortune_companies
+GROUP BY industry
+ORDER BY avg_maternity_weeks DESC;
+
+-- 12. Show companies with both excellent maternity leave and healthcare benefits.
+SELECT company_name, industry, maternity_leave_weeks, healthcare_benefits
+FROM fortune_companies
+WHERE maternity_leave_weeks >= 14 AND healthcare_benefits = 1
+ORDER BY maternity_leave_weeks DESC;
 
 ---
 
