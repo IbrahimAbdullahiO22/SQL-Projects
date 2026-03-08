@@ -1,5 +1,12 @@
 **Schema (SQLite v3.39)**
 
+-- Climate Conference VIP Analysis
+-- Dataset: VIP participation, hotel reservations, event attendance,
+-- and feedback logistics at a global climate summit.
+-- Skills: INNER JOIN, LEFT JOIN, Self JOIN, Subqueries, GROUP BY,
+-- NULL filtering, multi-condition WHERE filtering
+-- Author: Ibrahim Abdullahi
+
       CREATE TABLE vips (
          member_id INTEGER PRIMARY KEY
        , last_name TEXT
