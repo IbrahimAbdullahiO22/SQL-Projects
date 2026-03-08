@@ -1,5 +1,14 @@
 SQL project analyzing customer orders, product trends, and sales using SQLite data.
 
+Superstore project · SQL
+
+-- Superstore Sales & Inventory Analysis
+-- Dataset: Mock Superstore database with items across categories
+-- including Electronics, Furnishings, Appliances, and Kitchen Supplies.
+-- Skills: Aggregate functions (AVG, SUM, MIN, MAX, COUNT),
+-- GROUP BY, ORDER BY, WHERE filtering, CASE statements
+-- Author: Ibrahim Abdullahi
+
 # 1. How many orders were placed in January? 
 SELECT COUNT(orderID)
 FROM bit_db.JanSales
