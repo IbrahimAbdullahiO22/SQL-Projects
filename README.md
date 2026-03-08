@@ -105,5 +105,5 @@ Analysis of sales and inventory data from a mock Superstore database across Elec
 ## Author
 
 **Ibrahim Abdullahi**
- Minneapolis, MN
- [LinkedIn](https://www.linkedin.com/in/ibrahim-abdul-500b2b378) | [GitHub](https://github.com/IbrahimAbdullahiO22)
+📍Minneapolis, MN
+🔗 [LinkedIn](https://www.linkedin.com/in/ibrahim-abdul-500b2b378) | [GitHub](https://github.com/IbrahimAbdullahiO22)
