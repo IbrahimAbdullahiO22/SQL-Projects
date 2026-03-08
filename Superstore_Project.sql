@@ -34,10 +34,7 @@
         (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
         (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
         
-        
-    -- © Copyright 2025 Break Into Tech  --
     
-
 ---
 
 **Query #1**
@@ -58,8 +55,6 @@
 ---
 **Query #2**
 
-    
-    
     SELECT AVG(price)
     AS Average_price
     FROM superstore;
@@ -70,8 +65,6 @@
 
 ---
 **Query #3**
-
-    
     
     SELECT SUM(price)	
     AS Total_price
@@ -83,8 +76,6 @@
 
 ---
 **Query #4**
-
-    
     
     SELECT MIN(price)
     AS Minimum_price
@@ -96,9 +87,7 @@
 
 ---
 **Query #5**
-
-    
-    
+ 
     SELECT COUNT(*)
     AS Number_of_items
     FROM superstore;
@@ -109,10 +98,7 @@
 
 ---
 **Query #6**
-
-    
-    
-    
+ 
     SELECT Max(price)
     AS Expensive_price
     FROM superstore;
@@ -123,10 +109,7 @@
 
 ---
 **Query #7**
-
-    
-    
-    
+ 
     SELECT AVG(price)
     AS Kitchen_supplies
     FROM superstore
@@ -138,9 +121,7 @@
 
 ---
 **Query #8**
-
-    
-    
+  
     SELECT stock_quantity
     FROM superstore
     Where item_name = 'Air Purifier';
@@ -169,8 +150,6 @@
 ---
 **Query #10**
 
-    
-    
     SELECT category, AVG(price)
     AS Average_price
     From superstore
@@ -186,9 +165,7 @@
 
 ---
 **Query #11**
-
-
-    
+  
     -- Which item has the highest customer rating overall?
     SELECT item_name,average_rating
     From superstore
@@ -220,9 +197,7 @@
 
 ---
 **Query #13**
-
-    
-    
+ 
     -- How many items have an average customer rating below 4.5?
     Select Count(*) 
     AS low_rated_items 
