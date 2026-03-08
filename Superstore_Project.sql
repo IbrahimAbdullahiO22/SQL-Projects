@@ -1,5 +1,12 @@
 **Schema (SQLite v3.46)**
 
+-- Superstore Sales & Inventory Analysis
+-- Dataset: Mock Superstore database with items across categories
+-- including Electronics, Furnishings, Appliances, and Kitchen Supplies.
+-- Skills: Aggregate functions (AVG, SUM, MIN, MAX, COUNT),
+-- GROUP BY, ORDER BY, WHERE filtering, CASE statements
+-- Author: Ibrahim Abdullahi
+
     CREATE TABLE superstore (
         item_id INTEGER PRIMARY KEY,
         item_name TEXT,
@@ -226,17 +233,17 @@
 | --------------- |
 | 7               |
 
----
-**Query #14**
+-- 14. List all items that are both expensive (over $100) and low stock (less than 30 units).
+SELECT item_name, price, stock_quantity
+FROM superstore
+WHERE price > 100 AND stock_quantity < 30
+ORDER BY price DESC;
 
-    
-    
-    -- List all items that are both expensive (over $100) and low stock (less than 20 units).
-    Select item_name,price,stock_quantity
-    From superstore
-    where price > 100 AND stock_quantity < 20;
-
-There are no results to be displayed.
+-- 15. Which category has the highest average customer rating?
+SELECT category, ROUND(AVG(average_rating), 2) AS avg_rating
+FROM superstore
+GROUP BY category
+ORDER BY avg_rating DESC;
 
 ---
 
